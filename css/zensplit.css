@@ -1,4 +1,16 @@
-.zensplitter_panel {
+/* ============================================================== 
+ * zensplit.js v1.0.0
+ * http://github.com/zenmurugan/zensplit
+/* ============================================================== 
+ * Copyright (c) 2013 Senthil Murugan 
+ * Author: Senthil Murugan (http://github.com/zenmurugan
+ * 
+ * Dual licensed under the MIT and GPL licenses:
+ *  http://www.opensource.org/licenses/mit-license.php
+ *  http://www.gnu.org/licenses/gpl.html
+ *
+ * =========================================================== */
+ .zensplitter_panel {
     position: relative;
     display:block;
  }

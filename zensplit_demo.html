@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 	<head>
-		<title>zensplit</title>
+		<title>zensplit demo</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script type="text/javascript" src="lib/js/jquery.min.js"></script>
@@ -11,18 +11,30 @@
 		<script>
 			$(document).ready(function () {
 				$('#splitarea1').zensplit({type:"vsplit"});
-				$('#splitarea2').zensplit({type:"hsplit"});
+				$('#splitarea2').zensplit({type:"hsplit", min_limit:"30"});
+				$('#splitarea3').zensplit({type:"vsplit",position:"70", min_limit:"20"});
+				$('#splitarea4').zensplit({type:"hsplit"});
 			});
 		</script>
 	</head>
     <body>
-        <div id="splitarea1" style="border:1px solid #0000ff; width:900px;height:400px">
-            <div id="splitarea2" >
-                <div >Top Panel Then alter the Javascript slightly to assign this class on mousedown. So from that unaltered script it would look like this.</div>
-                <div >Bottom Panel Then alter the Javascript slightly to assign this class on mousedown. So from that unaltered script it would look like this.</div>
-            </div>
-            <div >Right Panel. Then alter the Javascript slightly to assign this class on mousedown. So from that unaltered script it would look like this.</div>
+        <h1>Vertical Splitter</h1>
+        <div id="splitarea1" style="border:1px solid #0000ff; width:500px;height:80px">
+                <div>Left side Panel</div>
+                <div>Right side Panel</div>
         </div>
-
+        <h1>Horizontal Splitter </h1>
+        <div id="splitarea2" style="border:1px solid #0000ff; width:300px;height:100px">
+            <div>Top Panel</div>
+            <div>Bottom Panel</div>
+        </div><br>
+        <h1>One level nested splitter </h1>
+        <div id="splitarea3" style="border:1px solid #0000ff; width:500px;height:300px">
+            <div id="splitarea4">
+                <div>Top Panel</div>
+                <div>Bottom Panel</div>
+            </div>
+            <div>This is an example of One level nested splitter and this is the right side of the panel</div>
+        </div>
     </body>
 </html>

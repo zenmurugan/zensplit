@@ -122,10 +122,10 @@
         if (evt.type == 'mousedown') {
             moving = true;
             $("body").css("cursor",zs.cur_resize);
-            splitter.addClass("zsdrag");
             zensplit.addClass("unselectable");
             panel0.addClass("unselectable");
             panel1.addClass("unselectable");
+            splitter.addClass("zsdrag");
         } else {
             moving = false;
             $("body").css("cursor","auto");
