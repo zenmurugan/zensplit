@@ -1,0 +1,95 @@
+.zensplitter_panel {
+    position: relative;
+    display:block;
+ }
+.zensplitter_panel .vsplitter {
+    background-color: #f3f3f3;
+    border-left:1px solid  #e0e0e0;
+    border-right:1px solid  #e0e0e0;
+    overflow: hidden;
+    cursor: col-resize;
+    width: 6px;
+    z-index:9000;
+    position: absolute;
+}
+.zensplitter_panel .vsplitter .zsthumb {
+    background-color: #B5BCC7;
+    height: 19px;
+    width: 1px;
+    left:49%;
+    margin: 0;
+    top:49%;
+    position: absolute;
+}
+
+.zensplitter_panel .hsplitter {
+    background: #f3f3f3;
+    border-top:1px solid  #e0e0e0;
+    border-bottom:1px solid  #e0e0e0;
+    overflow: hidden;
+    cursor: row-resize;
+    height: 6px;
+    z-index:8000;
+    position: absolute;
+}
+.zensplitter_panel .hsplitter .zsthumb {
+    background-color: #B5BCC7;
+    height: 1px;
+    width: 19px;
+    left:49%;
+    top:2px;
+    margin: 0;
+    position: absolute;
+}
+ .zsdrag  {
+    background-color: #d0d0d0 !important;
+}
+
+.zensplitter_panel .vsplitter,
+.zensplitter_panel .hsplitter,
+.zensplitter_panel .left_area,
+.zensplitter_panel .right_area,
+.zensplitter_panel .top_area,
+.zensplitter_panel .bottom_area {
+    position:absolute;
+    overflow:auto;
+}
+.zensplitter_panel .vsplitter,
+.zensplitter_panel .left_area,
+.zensplitter_panel .right_area {
+    height:100%;
+}
+
+.zensplitter_panel .hsplitter,
+.zensplitter_panel .top_area,
+.zensplitter_panel .bottom_area {
+    width:100%;
+}
+
+.zensplitter_panel .left_area,
+.zensplitter_panel .top_area,
+.zensplitter_panel .bottom_area,
+.zensplitter_panel .hsplitter {
+    left:0;
+}
+.zensplitter_panel .right_area {
+    right:0;
+}
+.zensplitter_panel .bottom_area {
+    bottom:0;
+}
+.zensplitter_panel .top_area,
+.zensplitter_panel .left_area,
+.zensplitter_panel .right_area,
+.zensplitter_panel .vsplitter {
+    top:0;
+}
+.unselectable {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+
+
