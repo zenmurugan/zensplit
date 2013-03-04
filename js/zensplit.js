@@ -1,17 +1,17 @@
-/* ============================================================== 
+/* ==============================================================
  * zensplit.js v1.0.0
  * http://github.com/zenmurugan/zensplit
-/* ============================================================== 
- * Copyright (c) 2013 Senthil Murugan 
+/* ==============================================================
+ * Copyright (c) 2013 Senthil Murugan
  * Author: Senthil Murugan (http://github.com/zenmurugan
- * 
+ *
  * Dual licensed under the MIT and GPL licenses:
  *  http://www.opensource.org/licenses/mit-license.php
  *  http://www.gnu.org/licenses/gpl.html
  *
  * =========================================================== */
- 
-/** 
+
+/**
  * Parameters:
  *   type      => values: "vsplit" or "hsplit"
  *   position  => value in %
@@ -28,13 +28,13 @@
         cur_resize  : "col-resize",
         min_limit   : "10",
     },options || {});
-    
+
     this.addClass("zensplitter_panel");
     var splitter = $('<div></div>');
     var zensplit = this;
     var position;
     var panel0 = zensplit.children().first();
-    var panel1 = panel0.next(); 
+    var panel1 = panel0.next();
     var moving = false;
     if(zs.type == "vsplit") {
         panel0.addClass("left_area");
@@ -42,7 +42,7 @@
         splitter.addClass("vsplitter");
     } else {
         panel0.addClass("top_area");
-        panel1.addClass("bottom_area");        
+        panel1.addClass("bottom_area");
         splitter.addClass("hsplitter");
     }
     splitter.append($("<div/>").addClass("zsthumb"));
@@ -55,7 +55,7 @@
                 //panel0.width(((zs.position) * 0.01 * zensplit.width() - (splitter.width())));
                 //panel1.width((((100 - zs.position)) * 0.01 * zensplit.width() - (splitter.width())));
                 //position = panel0.width();
-                //splitter.css("left",position);                
+                //splitter.css("left",position);
                 // splitter.children().css("top",((splitter.height()/2)-(splitter.children().height()/2)));
                 zs.cur_resize = "col-resize";
             } else {
@@ -66,7 +66,7 @@
                 // splitter.css("top",position);
                 // splitter.children().css("left",((splitter.width()/2)-(splitter.children().width()/2)));
                 zs.cur_resize = "row-resize";
-                
+
             }
         }),
         position : (function(current_pos) {
@@ -76,7 +76,7 @@
                 }
                 var splitter_width = (splitter.width()/2) + 1;
                 position = (current_pos - splitter_width);
-                if((position > (zensplit.width() * (zs.min_limit * 0.01))) && 
+                if((position > (zensplit.width() * (zs.min_limit * 0.01))) &&
                    (position < (zensplit.width() * ((100 - zs.min_limit) * 0.01))) ){
                         splitter.css("left",position);
                         panel0.width(position);
@@ -86,10 +86,10 @@
             } else {
                 if (current_pos === undefined) {
                     current_position = panel0.height();
-                }                
+                }
                 var splitter_height = (splitter.height()/2) + 1;
                 position = (current_pos - splitter_height);
-                if((position > (zensplit.height() * (zs.min_limit * 0.01))) && 
+                if((position > (zensplit.height() * (zs.min_limit * 0.01))) &&
                    (position < (zensplit.height() * ((100 - zs.min_limit) * 0.01))) ){
                         splitter.css("top",position);
                         panel0.height(position);
@@ -98,12 +98,12 @@
                 }
             }
         }),
-        mousemovement : (function(evt) {            
-            if (!moving) {            
+        mousemovement : (function(evt) {           
+            if (!moving) {
                 return;
             }
             var pos;
-            if(zs.type == "vsplit") {                
+            if(zs.type == "vsplit") {
                 pos = (panel0.width() - ((splitter.offset().left) - evt.pageX) );
             } else {
                 pos = (panel0.height() - ((splitter.offset().top) - evt.pageY) );
@@ -116,9 +116,12 @@
             $("body").css("cursor","auto");
             splitter.removeClass("zsdrag");
         }),
+        resize: (function(evt) {
+            self.init();
+        }),
     });
     self.init();
-    splitter.bind('mousedown mouseup', function(evt) {        
+    splitter.bind('mousedown mouseup', function(evt) {
         if (evt.type == 'mousedown') {
             moving = true;
             $("body").css("cursor",zs.cur_resize);
@@ -135,11 +138,11 @@
             splitter.removeClass("zsdrag");
         }
     });
-    
+    $(window).resize(self.resize);
     splitter.bind('mouseup', self.mouserelease);
-    zensplit.bind("mousemove",self.mousemovement);  
+    zensplit.bind("mousemove",self.mousemovement);
     $(document.documentElement).bind("mousemove",self.mousemovement);
     $(document.documentElement).bind("mouseup",self.mouserelease);
-    
+
   };
 }( jQuery ));
