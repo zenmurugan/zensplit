@@ -8,7 +8,7 @@ This is a simple layout splitter based on JQuery that can be dragged to adjust t
 
 # License
 
-Copyright (c) 2013 Senthil Murugan
+Copyright (c) 2013 - 2014 Senthil Murugan
 This plugin is released under dual licenses -  MIT and GPL:
 * MIT - http://www.opensource.org/licenses/mit-license.php
 * GPL - http://www.gnu.org/licenses/gpl.html
